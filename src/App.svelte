@@ -8,4 +8,4 @@
 
 <body> hoi </body>
 
-<Button on:click={click} />
+<Button on:click={click}>wow a button</Button>
