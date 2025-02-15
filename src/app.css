@@ -1,16 +1,48 @@
+@font-face {
+  font-family: vcr;
+  src: url("css-testing/fonts/VCR_OSD_MONO_1.001.ttf");
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --c-100: #fff;
+  --c-200: #eee;
+  --c-500: #777;
+  --c-700: #555;
+  --c-900: #000000;
+
+  --fs-title: 4rem;
+  --fs-heading: 4rem;
+  --fs-subheading: 3.2rem;
+  --fs-body-large: 2.4rem;
+  --fs-body: 1.8rem;
+  --fs-small: 1.4rem;
+
+  --p-tiny: 0.4rem;
+  --p-small: 0.8rem;
+  --p-medium: 1.2rem;
+  --p-large: 2.4rem;
+  --p-huge: 4rem;
+  --font-stack: vcr, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--font-stack);
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 62.5%;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  font-family: var(--font-stack);
+  box-sizing: border-box;
 }
 
 a {
@@ -39,13 +71,6 @@ h1 {
   padding: 2em;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -58,7 +83,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--c-200);
 }
 button:focus,
 button:focus-visible {

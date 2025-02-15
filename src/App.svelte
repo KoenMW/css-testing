@@ -1,11 +1,31 @@
 <script>
-  import Button from "./components/common/Button.svelte";
-
-  const click = () => {
-    console.log("clicked");
-  };
+  import Glitch from "./components/common/Glitch.svelte";
+  import Card from "./components/navigation/Card.svelte";
 </script>
 
-<body> hoi </body>
+<main>
+  <header>
+    I use this site to test out some neat <Glitch>css</Glitch> things feel free to
+    look around
+  </header>
+  <section class="cards">
+    <Card>hover-font-bubble</Card>
+  </section>
+</main>
 
-<Button on:click={click}>wow a button</Button>
+<style>
+  main {
+    padding: var(--p-large);
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    align-items: center;
+  }
+
+  header {
+    text-align: center;
+    font-size: var(--fs-heading);
+  }
+</style>
