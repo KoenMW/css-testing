@@ -1,16 +1,24 @@
-<script>
-  import Glitch from "./components/common/Glitch.svelte";
-  import Card from "./components/navigation/Card.svelte";
+<script lang="ts">
+  import { get } from "svelte/store";
+  import { pages, path, setPath } from "./stores/router";
+  import NotFound from "./views/NotFound.svelte";
+
+  $: route = pages.find((page) => {
+    console.log(`path: ${$path}`);
+    return (
+      page.path === $path || page.path === $path.split("/").filter(Boolean)[0]
+    );
+  }) || {
+    component: NotFound,
+  };
+
+  window.onpopstate = () => {
+    setPath();
+  };
 </script>
 
 <main>
-  <header>
-    I use this site to test out some neat <Glitch>css</Glitch> things feel free to
-    look around
-  </header>
-  <section class="cards">
-    <Card>hover-font-bubble</Card>
-  </section>
+  <svelte:component this={route.component} />
 </main>
 
 <style>
@@ -22,10 +30,5 @@
     width: 100dvw;
     display: flex;
     align-items: center;
-  }
-
-  header {
-    text-align: center;
-    font-size: var(--fs-heading);
   }
 </style>
