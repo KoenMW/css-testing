@@ -1,6 +1,7 @@
 import { writable } from "svelte/store";
 import Home from "../views/Home.svelte";
 import type { Component } from "svelte";
+import FontHover from "../views/FontHover.svelte";
 
 export type Route = {
   name: string;
@@ -17,6 +18,11 @@ export const pages: Route[] = [
     name: "Home",
     path: "",
     component: Home,
+  },
+  {
+    name: "Hover-font-bubble",
+    path: "hover-font-bubble",
+    component: FontHover,
   },
 ];
 

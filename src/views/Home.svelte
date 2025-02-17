@@ -3,16 +3,16 @@
   import Card from "../components/navigation/Card.svelte";
 </script>
 
-<header>
+<h1>
   I use this site to test out some neat <Glitch>css</Glitch> things feel free to
   look around
-</header>
+</h1>
 <section class="cards">
   <Card route="hover-font-bubble">hover-font-bubble</Card>
 </section>
 
 <style>
-  header {
+  h1 {
     text-align: center;
     font-size: var(--fs-heading);
   }
